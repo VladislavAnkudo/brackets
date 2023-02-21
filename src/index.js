@@ -17,14 +17,7 @@ module.exports = function check(str, bracketsConfig) {
       }else{
         return true
       }
-      
     }
-   if(str === '([[[[(({{{}}}(([](((((((())))||||||))))[[{{|{{}}|}}[[[[]]]]{{{{{}}}}}]]))))]]]]))()' || str === '|(|)' || str === '())('){
-    return false
-   }
-    if(str === '||'){
-    return true
-   }
   }
   return stack.length === 0; 
 
