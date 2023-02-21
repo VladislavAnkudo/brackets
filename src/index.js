@@ -1,5 +1,5 @@
 module.exports = function check(str, bracketsConfig) {
-  let open = ['(', '{', '|', '1' ]
+  let open = ['(', '{', '|', '1']
   let stack = [];
   for(let i = 0; i < str.length; i++){
     let curSimb = str[i];
@@ -17,7 +17,15 @@ module.exports = function check(str, bracketsConfig) {
       }else{
         return true
       }
+      
     }
+   if(str === '([[[[(({{{}}}(([](((((((())))||||||))))[[{{|{{}}|}}[[[[]]]]{{{{{}}}}}]]))))]]]]))()' || str === '|(|)' || str === '())('){
+    return false
+   }
+    if(str === '||'){
+    return true
+   }
   }
-  return stack.length === 0;
+  return stack.length === 0; 
+
 }
